@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astronomi - Astrometri</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+     body {
+      background-image: url('background.jpg'); /* ganti dengan nama file kamu */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background-color: #00c6ff;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0072ff;
+    }
+  </style>
+</head>
+<script>
+  function aksesGuru() {
+    const password = prompt("Masukkan password untuk mengakses halaman guru:");
+    if (password === "astro123") {
+      window.location.href = "guru.html";
+    } else if (password !== null) {
+      alert("Password salah. Coba lagi.");
+    }
+  }
+</script>
+<body>
+  <h1>Selamat datang di Modul Interaktif<br>Astrometri Asteroid</h1>
+  <p>Silakan pilih peran Anda untuk melanjutkan:</p>
+  <div class="overlay"></div>
+  <div class="content">
+  <div class="button-group">
+    <button onclick="aksesGuru()">Saya Guru</button>
+    <button onclick="window.location.href='siswa.html'">Saya Siswa</button>
+  </div>
+
+</body>
+</html>

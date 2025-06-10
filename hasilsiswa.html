@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astrometri Siswa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    .content{color:rgb(0, 0, 0);}
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-menu button { margin-right: 5px; color:#000000}
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+      color: #eaff00;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #aaa;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #a2a49f;
+    }
+
+    button {
+      background-color: #eaff00;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #eaff00;
+    }
+  </style>
+  </head>
+
+  <body>
+    <script>
+  function unduhPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const nama = document.getElementById("nama").value.trim();
+    const keterangan = document.getElementById("keterangan").value.trim();
+    const rows = document.querySelectorAll("#dataTable tbody tr");
+
+    doc.setFontSize(14);
+    doc.text(`Nama Siswa: ${nama}`, 10, 10);
+    doc.text("Catatan Umum:", 10, 20);
+    doc.setFontSize(12);
+    doc.text(keterangan, 10, 30);
+
+    let startY = 50;
+    doc.setFontSize(14);
+    doc.text("Data Pengamatan:", 10, startY);
+    startY += 10;
+
+    // Tabel header
+    doc.setFontSize(12);
+    doc.text("File       Waktu        RA                  DEC", 10, startY);
+    startY += 8;
+
+    // Tabel data
+    rows.forEach(row => {
+      const cols = row.querySelectorAll("td input");
+      const file = cols[0].value.trim();
+      const waktu = cols[1].value.trim();
+      const ra = cols[2].value.trim();
+      const dec = cols[3].value.trim();
+      if (file || waktu || ra || dec) {
+        const rowText = `${file}    ${waktu}    ${ra}    ${dec}`;
+        doc.text(rowText, 10, startY);
+        startY += 8;
+      }
+    });
+
+    doc.save(`hasil_pengamatan_${nama || 'siswa'}.pdf`);
+  }
+</script>
+  <div class="container">
+    <div class="content-box">
+      <h1>Modul Astrometri Asteroid - Akses Siswa</h1>
+       <section>
+    <h2>
+        Mari Kita Telusuri Jejak Asteroid!
+    </h2>
+    <div class="tab-menu">
+    <button onclick="showTheory('hasil')">Hasil Akuisisi Data</button>
+    <button onclick="showTheory('analisiskesimpulan')">Analisis & Kesimpulan</button>
+          
+  </div>
+
+<div id="hasil"  class="tab-content active" >
+  <h4>Hasil Akuisisi Data</h4>
+  <div class="form-container">
+  <p>Laporkan hasil pengamatanmu.
+</p>
+<p>
+  <label for="nama">Nama Siswa:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+
+        <label>Tabel 1. Posisi Asteroid 1992JB:</label>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Nama File</th>
+          <th>Waktu (UT)</th>
+          <th>RA (h m s)</th>
+          <th>DEC(&deg; ' ")</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" placeholder="cth: 92JB05" /></td>
+          <td><input type="text" placeholder="cth: 04 53 00" /></td>
+          <td><input type="text" placeholder="cth: 15 30 38.70"/></td>
+          <td><input type="text" placeholder="cth: 11 14 06.2"/></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <!-- Tambah baris kalau perlu -->
+         <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button onclick="unduhPDF()">Unduh Hasil</button>
+  </div>
+
+  <script>
+    function unduh() {
+      const nama = document.getElementById("nama").value.trim();
+      const keterangan = document.getElementById("keterangan").value.trim();
+      const rows = document.querySelectorAll("#dataTable tbody tr");
+      let hasil = `Nama Siswa: ${nama}\n\nCatatan Umum:\n${keterangan}\n\nData Pengamatan:\n`;
+
+      hasil += "Tanggal\tWaktu\tRA\tDec\n";
+
+      rows.forEach(row => {
+        const cols = row.querySelectorAll("td input");
+        const tanggal = cols[0].value.trim();
+        const waktu = cols[1].value.trim();
+        const ra = cols[2].value.trim();
+        const dec = cols[3].value.trim();
+        if (tanggal || waktu || ra || dec) {
+          hasil += `${tanggal}\t${waktu}\t${ra}\t${dec}\n`;
+        }
+      });
+
+      const blob = new Blob([hasil], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = `hasil_pengamatan_${nama || 'siswa'}.txt`;
+      link.click();
+    }
+  </script>
+</p>
+</div>
+</section>
+</div>
+
+<div id="analisiskesimpulan"  class="tab-content active" >
+  <h4>Analisis</h4>
+  <div class="form-container">
+   <p>
+    <label for="analisis1">Apa yang kamu amati dari perubahan posisi asteroid 1992 JB (RA dan Dec) dari waktu ke waktu?:</label>
+    <input type="text" id="analisis1" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisis2">Bandingkan pola gerak asteroid dengan bintang latar. Apa yang membedakan keduanya?
+
+:</label>
+    <input type="text" id="analisis2" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisiS3">Gunakan metode paralaks, bagaimana jarak asteroid yang kamu amati dengan bumi?
+
+:</label>
+    <input type="text" id="analisis3" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisis4">Berdasarkan citra dan posisi yang kamu amati, menurutmu apakah asteroid ini berada dalam orbit antara Mars dan Jupiter (seperti sabuk asteroid utama)? Mengapa?
+
+:</label>
+    <input type="text" id="analisis4" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisis5">Apakah kamu tahu bahwa beberapa asteroid bisa mendekati atau bahkan melintasi orbit Bumi? Mengapa hal ini penting untuk dipantau?
+
+:</label>
+    <input type="text" id="analisis5" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisis6">Setelah kamu melakukan pengamatan, apakah kamu menduga 1992 JB termasuk asteroid yang orbitnya mendekati Bumi? Mengapa?
+
+:</label>
+    <input type="text" id="analisis6" placeholder="Tuliskan jawabanmu">
+</p>
+
+<p>
+    <label for="analisis7">Coba cari informasi tambahan di internet (atau bisa diberi sumber) tentang 1992 JB. Termasuk kategori apakah asteroid ini menurut para astronom?
+
+:</label>
+    <input type="text" id="analisis7" placeholder="Tuliskan jawabanmu">
+</p>
+<p>
+    <label for="analisis8">Tuliskan kesimpulan hasil pengamatanmu!
+
+:</label>
+    <input type="text" id="analisis8" placeholder="Tuliskan jawabanmu">
+</p>
+<button onclick="downloadAnalisisPDF()">Unduh Analisis sebagai PDF</button>
+
+</div>
+<script>
+function downloadAnalisisPDF() {
+  const element = document.getElementById("analisis");
+
+  const opt = {
+    margin: 0.5,
+    filename: 'jawaban_analisis_asteroid_1992JB.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+  link.click();
+}
+</script>
+
+<div class="nav-buttons">
+        <button class="btn-nav btn-back" onclick="location.href='dasarteorisiswa.html'">⬅ Back</button>
+        <button class="btn-nav btn-home" onclick="location.href='index.html'">🏠 Home</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTheory(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    
+    }
+</script>
+</body>
+</html>
+

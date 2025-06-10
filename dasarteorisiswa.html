@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astrometri Guru</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content{color:white;}
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-menu button { margin-right: 5px; }
+    .video-container iframe { width: 100%; height: 315px; }
+    .slideshow-container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      margin: 20px auto;
+    }
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow-container img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content-box">
+      <h1>Modul Astrometri Asteroid - Akses Guru</h1>
+
+      <section>
+        <h2>Teori Dasar</h2>
+        <div class="tab-menu">
+          <button onclick="showTheory('astrometri')">Astrometri</button>
+          <button onclick="showTheory('asteroid')">Asteroid</button>
+          <button onclick="showTheory('koordinat')">Koordinat Langit</button>
+          <button onclick="showTheory('langkah')">Simulasi Penentuan Posisi</button>
+        </div>
+
+        <div id="astrometri" class="tab-content active">
+          <h4>Astrometri</h4>
+          <p>Astrometri merupakan cabang ilmu astronomi yang mempelajari pengukuran posisi suatu objek langit dan pergerakannya di bidang langit (Endl, M., & Cochran, W.D., 2007). 
+    Astrometri merupakan salah satu teknik pertama yang digunakan untuk mengidentifikasi planet di sekitar bintang lain. 
+    Seperti pada metode tidak langsung lainnya, para astronom berusaha mendeteksi orbit bintang pusat terhadap barycenter (titik pusat massa) dari sistem bintang/planet. Orbit ini diukur sebagai perubahan posisi bintang di bidang langit, biasanya dibandingkan dengan sejumlah bintang latar belakang yang lebih jauh, yang digunakan untuk mendefinisikan kerangka referensi astrometri. Salah satu penerapan penting astrometri adalah dalam penentuan posisi asteroid, yang memiliki peranan besar dalam memahami dinamika tata surya, memperkirakan potensi tabrakan dengan Bumi, serta mendukung misi eksplorasi luar angkasa. Pengukuran posisi asteroid secara akurat memungkinkan untuk pemetaan orbit dan memprediksi pergerakannya di masa depan.</p>
+        </div>
+
+        <div id="asteroid" class="tab-content">
+          <h4>Asteroid</h4>
+          <p>Asteroid adalah objek padat dengan diameter lebih dari 1 meter dan lebih kecil dari planet katai, 
+    yang bergerak di atau berasal dari ruang antarplanet, serta tidak menunjukkan aktivitas apa pun (misalnya pelepasan gas, debu, atau meteoroid) (Borovicka, J., 2016).
+    Asteroid, yang kadang disebut planet kecil, adalah sisa-sisa berbatu tanpa atmosfer yang tertinggal dari pembentukan awal tata surya kita sekitar 4,6 miliar tahun yang lalu.
+
+Sebagian besar asteroid ditemukan mengorbit Matahari di antara planet Mars dan Jupiter dalam sabuk asteroid utama. Ukuran asteroid bervariasi, dari Vesta—yang terbesar dengan diameter sekitar 329 mil (530 kilometer)—hingga benda-benda yang berukuran kurang dari 33 kaki (10 meter). Total massa semua asteroid jika digabungkan masih lebih kecil dibandingkan massa Bulan Bumi (NASA, n.d.).
+  </p>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/gWvVvdwAH8g" title="Video Asteroid" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div id="koordinat" class="tab-content">
+          <h4>Sistem Koordinat Langit</h4>
+          <p>Sistem koordinat benda langit merupakan sistem yang digunakan untuk menentukan posisi suatu benda langit seperti bintangm matahari, dan bulan di langit. Sistem koordinat benda langit merupakan sistem koordinat bola.
+    Biasanya digunakan dua koordinat yang didefinisikan pada lingkaran besar acuan bola langit dan dinyatakan dalam sudut. 
+    Sistem koordinat benda langit hanya berfoks pada arah suatu benda di langit dan tidak memperhitungkan jarak benda langit tersebut.
+    Ada beberapa sistem koordinat benda langut berdasarkan bidang acuan yang digunakan, yaitu sistem koordinat horizon, sistem koordinat ekuatorial, sistem koordinat ekliptika dan sistem koordinat galaksi.
+  
+          <h4>Bola Langit</h4>
+          <p>Bola langit merupakan bola khayal yang sangat besar dimana semua benda langit seperti bintang, bulan dan matahari
+        menempel pada permukaan dalam kulit bola dan pengamat di bumi menjadi pusatnya. Penggunaan bola langit dapat memudahkan kita dalam memahami dan memprediksi pergerakan benda-benda langit  
+        baik harian maupun tahunan. 
+    </p>
+          <h4>Sistem Koordinat Ekuatorial</h4>
+           Sistem koordinat ekuatorial merupakan sistem yang paling sering digunakan. Hal ini dikarenakan sistem koordinat ini memanfaatkan rotasi bumi dalam menentukan posisi benda langit.
+        Sistem koordinat ini serupa dengan cara kita mendefinisikan posisi di permukaan bumi dan menggunakan orientasi bumi dalam ruang angkasa sebagai dasarnya.
+        Bidang ekuator adalah bidang acuan yang cocok untuk sistem koordinat yang tidak bergantung pada waktu dan posisi pengamat.
+        Sumbu rotasi bumi diperpanjang ke atas dan ke bawah hingga mencapai bola langit.
+        Titik di mana sumbu bertemu dengan bola langit tepat di atas kutub utara disebut Kutub Langit Utara (KLU) dan di bawah kutub selatan disebut Kutub Langit Selatan (KLS).
+        Bidang ekuator bumi juga diperluas hingga mencapai bola langit dan membentuk ekuator langit.
+        Ekuator langit membelah bola langit menjadi belahan utara dan selatan.
+    </p>
+    <h4>
+        Penentuan Posisi Benda Langit pada Sistem Koordinat
+    </h4>
+    <h4>
+        Deklinasi-Hour Angle
+    </h4>
+    <p>
+        Deklinasi merupakan sudut ketinggian benda langit yang diukur dari bidang ekuator langit ke arah kutub langit. Deklinasi memiliki rentang nilai antara -90&deg; dan 90&deg;. 
+        Deklinasi bernilai negatif jika berada di langit belahan selatan dan bernilai positif jika berada di belahan langit utara. 
+    </p>
+    <p>
+        Hour Angle (HA) merupakan sudut antara meridian pengamat dan benda langit berada 
+        yang diukur sepanjang ekuator langit ke arah barat. HA biasanya dinyatakan dalam jam dan memiliki rentang nilai dari 0 jam hingga 24 jam. Sudut ini menyatakan waktu yang 
+        telah berlalu sejak benda langit transit dari atas pengamat. Benda langit yang memiliki HA sebesar 0 jam menandakan bahwa benda langit tersebut berada tepat di meridian atas atau sedang transit.
+    </p>
+    <h4>
+        Deklinasi-Asensio Rekta
+    </h4>
+    <p>
+        Koordinat yang digunakan untuk menentukan posisi benda langit yang mengacu pada titik Aries disebut asensio rekta. 
+        Asensio rekta diukur dari titik Aries ke arah timur atau berlawanan arah jarum jam. Asesnsio rekta biasanya disimbolkan dengan &alpha; atau RA (right ascencion) dan dinyatakan dalam jam.
+        Rentang nilai asensio rekta antara 0 jam sampai 24 jam atau dinyatakan dalam derajat memiliki rentang nilai dari 0&deg; hingga 360&deg;. Deklinasi dan asensio rekta bintang 
+        tidak berubah sehingga dapat digunakan sebagai peta bintang dan katalog. 
+
+    </p>
+        </div>
+
+        <div id="langkah" class="tab-content">
+          <h4>Deklinasi - Hour Angle</h4>
+          <p>Simulasi penentuan posisi benda langit dengan deklinasi 23.5&deg;, HA 6 jam, dan pengamat di 10&deg; LU.</p>
+          <div class="slideshow-container" id="slideshow1">
+            <!-- Tambahkan gambar 1-17 sesuai kebutuhan -->
+            <img src="gambar1.jpg" class="active">
+            <img src="gambar2.jpg" alt="Gambar 2">
+    <img src="gambar3.jpg" alt="Gambar 3">
+    <img src="gambar4.jpg" alt="Gambar 4">
+    <img src="gambar5.jpg" alt="Gambar 5">
+    <img src="gambar6.jpg" alt="Gambar 6">
+    <img src="gambar7.jpg" alt="Gambar 7">
+    <img src="gambar8.jpg" alt="Gambar 8">
+    <img src="gambar9.jpg" alt="Gambar 9">
+    <img src="gambar10.jpg" alt="Gambar 10">
+    <img src="gambar11.jpg" alt="Gambar 11">
+    <img src="gambar12.jpg" alt="Gambar 12">
+    <img src="gambar13.jpg" alt="Gambar 13">
+    <img src="gambar14.jpg" alt="Gambar 14">
+    <img src="gambar15.jpg" alt="Gambar 15">
+    <img src="gambar16.jpg" alt="Gambar 16">
+    <img src="gambar17.jpg" alt="Gambar 17">
+
+          </div>
+
+          <h4>Deklinasi - Asensio Rekta</h4>
+          <p>Simulasi penentuan posisi bintang dengan deklinasi -50&deg;, RA 4 jam, diamati dari 30&deg; LS.</p>
+          <div class="slideshow-container" id="slideshow2">
+            <img src="gbr1.jpg" class="active">
+            <img src="gbr2.jpg" alt="Gambar 2">
+    <img src="gbr3.jpg" alt="Gambar 3">
+    <img src="gbr4.jpg" alt="Gambar 4">
+    <img src="gbr5.jpg" alt="Gambar 5">
+    <img src="gbr6.jpg" alt="Gambar 6">
+    <img src="gbr7.jpg" alt="Gambar 7">
+    <img src="gbr8.jpg" alt="Gambar 8">
+    <img src="gbr9.jpg" alt="Gambar 9">
+    <img src="gbr10.jpg" alt="Gambar 10">
+    <img src="gbr11.jpg" alt="Gambar 11">
+    <img src="gbr12.jpg" alt="Gambar 12">
+    <img src="gbr13.jpg" alt="Gambar 13">
+    <img src="gbr14.jpg" alt="Gambar 14">
+    <img src="gbr15.jpg" alt="Gambar 15">
+    <img src="gbr16.jpg" alt="Gambar 16">
+    <img src="gbr17.jpg" alt="Gambar 17">
+          </div>
+        </div>
+      </section>
+
+      <div class="nav-buttons">
+        <button class="btn-nav btn-back" onclick="location.href='siswa.html'">⬅ Back</button>
+        <button class="btn-nav btn-home" onclick="location.href='index.html'">🏠 Home</button>
+        <button class="btn-nav btn-next" onclick="location.href='tutorialsiswa.html'">Next ➡</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTheory(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function runSlideshow(containerId) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('img');
+      let current = 0;
+
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000);
+    }
+
+    runSlideshow('slideshow1');
+    runSlideshow('slideshow2');
+  </script>
+</body>
+</html>

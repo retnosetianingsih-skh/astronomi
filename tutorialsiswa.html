@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astrometri Guru</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content{color:white;}
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-menu button { margin-right: 5px; }
+  </style>
+  </head>
+
+  <body>
+  <div class="container">
+    <div class="content-box">
+      <h1>Modul Astrometri Asteroid - Akses Guru</h1>
+       <section>
+    <h2>
+        Mari Kita Telusuri Jejak Asteroid!
+    </h2>
+    <div class="tab-menu">
+    <button onclick="showTheory('CLEA')">CLEA</button>
+    <button onclick="showTheory('perencanaan')">Perencanaan Observasi</button>
+          <button onclick="showTheory('akuisisi')">Akuisisi Data</button>
+          
+  </div>
+
+<div id="CLEA"  class="tab-content active" >
+  <h4>CLEA</h4>
+  <p>Astrometri dalam laporan ini dilakukan menggunakan aplikasi CLEA (Contemporary Laboratory Experiences in Astronomy), yang mensimulasikan pengamatan asteroid terhadap bintang-bintang latar belakang. Dengan membandingkan posisi relatif asteroid terhadap bintang-bintang yang tercatat dalam katalog referensi, koordinat langit asteroid dalam sistem koordinat ekuatorial (Right Ascension dan Declination) dapat ditentukan.
+</p>
+<p>
+Simulasi ini dilakukan untuk menentukan posisi asteroid dalam koordinat ekuatorial. Dengan demikian, dapat ditentukan jarak asteroid dengan bumi untuk memprediksi orbit asteroid di masa mendatang.
+</p>
+</div>
+
+<div class="tab-content" id="perencanaan">
+  <h4>Persiapan</h4>
+  <p>Untuk melakukan astrometri terhadap asteroid, perlu dilakukan terlebih dahulu instalasi software Astrometry of Asteroid. Software Astrometry of Asteroid dapat diunduh melalui tautan:</p>
+  <p><a href="http://public.gettysburg.edu/~marschal/clea/clea_products/pc/AstrmLab.zip" target="_blank" style="text-decoration: none;">
+  <button style="background-color: #2d2d2d; padding: 15px 30px; border: none; border-radius: 8px; color: white; cursor: pointer;">
+    Klik untuk download
+  </button>
+</a>
+</div>
+
+<div class="tab-content" id="akuisisi">
+    <p>Akuisisi data posisi asteroid dilakukan dengan menggunakan aplikasi Astrometry of Asteroid, salah satu proyek CLEA (Contemporary Laboratory Experiences in Astronomy) yang dikembangkan oleh Departemen Fisika, Gettysburg College. Data diperoleh dengan membandingkan posisi relatif asteroid terhadap bintang-bintang yang tercatat dalam katalog referensi dalam koordinat ekuatorial. Terdapat dua katalog referensi yang biasanya digunakan, yaitu katalog FK5 dan Hubble Space Telescope Guide Star Catalog (GSC). Namun, pada aplikasi Astrometry of Asteroid ini, hanya disediakan katalog GSC. Katalog GSC digunakan sebagai referensi karena katalog ini mencatat hampir 20 juta bintang yang memiliki magnitudo >16, sementara katalog FK5 hanya memiliki 3522 data bintang. Secara rinci, tahapan akuisisi data asteroid sebagai berikut:
+</p>
+  <h4>Mengidentifikasi Asteroid</h4>
+  <p>Prosedur yang dilakukan untuk mengidentifikasi asteroid adalah sebagai berikut:
+</p>
+  <ul>
+    <li>Memuat gambar benda langit yang diambil dari katalog GSC melalui menu File >> Load Image >> Image 1 >> 92JB05.</li>
+    <li>Untuk menampilkan gambar, digunakan menu Image >> View/Adjust >> Image 1 >> 92JB05.</li>
+    <li>Titik-titik yang tergambar merupakan bintang yang jauh kecuali satu objek, yang mana objek tersebut adalah asteroid.</li>
+    <li>Selanjutnya, memunculkan gambar lain (92JB07) yang diambil 10 menit dari citra sebelumnya (92JB05) dengan cara yang sama seperti pada langkah a-c.</li>
+    <li>Menyelaraskan kedua gambar dengan menggunakan menu Image >> Blink.</li>
+    <li>Akan muncul gambar 1 >> klik salah satu bintang yang terang >> continue >> klik satu bintang lain.</li>
+    <li>Klik continue,  akan muncul gambar 2, samakan dengan gambar 1. Klik bintang yang sebelumnya ditandai pada gambar 1.</li>
+    <li>Klik blink, layar selanjutkan akan berkedip-kedip menunjukkan gambar 1 dan gambar 2 secara bergantian.</li>
+    <li>Mengamati pergerakan titik-titik pada kedua gambar. Titik yang cenderung tidak mengalami perubahan posisi merupakan bintang, sementara titik yang posisinya mengalami perubahan diidentifikasi sebagai asteroid.</li>
+    <li>Klik stop untuk menghentikan blinking.</li>
+    <li>Melakukan kembali prosedur yang sama untuk 92JB08, 92JB09, 92JB10, 92JB12 dan 92JB14. Semua gambar dibandingkan dengan 92JB05.</li>
+</ul>
+
+<h4>Menentukan Posisi Asteroid pada Bola Langit</h4>
+  <p>Tahap ini dilakukan untuk menentukan koordinat asteroid pada bola langit dengan menggunakan koordinat equatorial. Penentuan ini dilakukan dengan melalui proses interpolarisasi, dimana dilakukan komparasi posisi asteroid pada gambar dengan koordinat bintang yang telah ada. Prosedur yang dilakukan dalam menentukan posisi asteroid pada bola langit adalah:</p>
+  <ul>
+<li>Memuat Gambar 1 (92JB05) pada menu File >> Load Image Files >> Image 1 >> 92JB05.</li>
+<li>Klik menu Images >> Measure >> Image 1.</li>
+<li>Akan muncul jendela untuk konfirmasi tanggal dan waktu (disesuaikan dengan tanggal dan waktu yang ditetapkan oleh manual book pada Tabel 2 >> Ok.</li>
+<li>Akan muncul jendela lain untuk mengkonfirmasi koordinat titik tengah gambar, disesuaikan pula dengan informasi yang telah disediakan pada Tabel 2 Manual Book >> Ok.</li>
+<li>Mengatur field size pada 8” dan batas magnitudo 20 >> Ok.</li>
+<li>Menandai minimal 3 bintang yang diperkirakan sama antara GSC maupun 92JB05, bintang yang dipilih diberi tanda 1, 2, dan 3.</li>
+<li>Memilih 3 bintang referensi (kiri), kemudian mencatat RA, DEC, dan ID# nya, lalu memasukkan pada Tabel 2 >> Select >> Ok (pada Select Reference Star).</li>
+<li>Pointing bintang 1, 2, 3 pada gambar 92JB05 >> Ok</li>
+<li>Pointing ke unkown star (asteroid) >> Ok</li>
+<li>Informasi posisi asteroid pada koordinat ekuatorial akan muncul >> Record Data.</li>
+<li>Melakukan prosedur yang sama untuk gambar 92JB07,  92JB08, 92JB09, 92JB10, 92JB12 dan 92JB14.</li>
+  </ul>  
+</div>
+</section>
+
+
+<div class="nav-buttons">
+        <button class="btn-nav btn-back" onclick="location.href='dasarteorisiswa.html'">⬅ Back</button>
+        <button class="btn-nav btn-home" onclick="location.href='index.html'">🏠 Home</button>
+        <button class="btn-nav btn-next" onclick="location.href='hasilsiswa.html'">Next ➡</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTheory(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+</script>
+</body>
+</html>
+

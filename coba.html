@@ -1,0 +1,120 @@
+<body>
+  <div class="form-container">
+    <h2>Form Hasil Pengamatan Asteroid</h2>
+
+    <label for="nama">Nama Siswa:</label>
+    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+
+    <label for="keterangan">Catatan Umum:</label>
+    <textarea id="keterangan" rows="4" placeholder="Tuliskan pengamatan umum di sini..."></textarea>
+
+    <label>Unggah Gambar Observasi:</label>
+    <input type="file" id="gambarInput" accept="image/*" />
+    <div id="previewGambar" style="margin: 10px 0;"></div>
+
+    <label>Data Tabel Pengamatan:</label>
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Waktu</th>
+          <th>RA</th>
+          <th>Dec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+          <td><input type="text" /></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button onclick="unduhPDF()">Unduh PDF</button>
+  </div>
+
+  <script>
+    let gambarData = null;
+
+    document.getElementById("gambarInput").addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (file && file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          gambarData = event.target.result;
+          const img = document.createElement("img");
+          img.src = gambarData;
+          img.style.maxWidth = "300px";
+          img.style.marginTop = "10px";
+          const preview = document.getElementById("previewGambar");
+          preview.innerHTML = "";
+          preview.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    async function unduhPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const nama = document.getElementById("nama").value.trim();
+      const catatan = document.getElementById("keterangan").value.trim();
+      const rows = document.querySelectorAll("#dataTable tbody tr");
+
+      let y = 20;
+      doc.setFontSize(16);
+      doc.text("Hasil Pengamatan Asteroid", 105, y, { align: "center" });
+
+      y += 10;
+      doc.setFontSize(12);
+      doc.text(`Nama: ${nama}`, 15, y);
+
+      y += 10;
+      doc.text("Catatan Umum:", 15, y);
+      y += 8;
+
+      const catatanBaris = doc.splitTextToSize(catatan, 180);
+      doc.text(catatanBaris, 15, y);
+      y += catatanBaris.length * 6;
+
+      if (gambarData) {
+        doc.text("Gambar Observasi:", 15, y);
+        y += 6;
+        doc.addImage(gambarData, "PNG", 15, y, 80, 60);
+        y += 65;
+      }
+
+      doc.text("Data Pengamatan:", 15, y);
+      y += 8;
+
+      doc.setFont("courier", "normal");
+      doc.text("Tanggal     Waktu    RA        Dec", 15, y);
+      y += 6;
+
+      rows.forEach(row => {
+        const cols = row.querySelectorAll("td input");
+        const tanggal = cols[0].value.trim();
+        const waktu = cols[1].value.trim();
+        const ra = cols[2].value.trim();
+        const dec = cols[3].value.trim();
+
+        if (tanggal || waktu || ra || dec) {
+          const rowText = `${tanggal.padEnd(12)} ${waktu.padEnd(8)} ${ra.padEnd(9)} ${dec}`;
+          doc.text(rowText, 15, y);
+          y += 6;
+        }
+      });
+
+      doc.save(`hasil_pengamatan_${nama || 'siswa'}.pdf`);
+    }
+  </script>
+</body>

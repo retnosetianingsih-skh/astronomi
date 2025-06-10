@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  
+  </stlye>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astrometri Guru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content-box">
+      <h1>Modul Astrometri Asteroid - Akses Guru</h1>
+         <section>
+      <h2>Pendahuluan</h2>
+     <div class="content intro">
+      <p>
+        Astronomi merupakan ilmu yang membahas benda-benda langit dan fenomena yang terjadi di alam semesta . Astronomi telah menjadi bagian penting dalam kehidupan sehari-hari manusia sejak zaman dulu.  Pergerakan benda-benda langit digunakan untuk menentukan waktu tanam dan panen, navigasi pelayaran, hingga penentuan kalender dan arah kiblat. Namun, dalam konteks pendidikan sains di Indonesia saat ini, astronomi justru tidak mendapatkan porsi yang memadai.
+        <span id="dots">...</span>
+        <span id="more">
+        Kurikulum fisika di tingkat SMA/MA tidak secara eksplisit memberikan ruang bagi pengembangan ilmu astronomi. Materi yang berkaitan dengan astronomi hanya dibahas sekilas, misalnya pada materi alat optik (teleskop) atau pada topik sistem tata surya. Pada umumnya, penyampaian materi dari kedua topik tersebut hanya bersifat deskriptif, sehingga peserta didik tidak memiliki cukup ruang untuk memahami astronomi sebagai ilmu yang kaya akan data, berbasis observasi, dan sarat dengan kontribusi teknologi.
+          Di sisi lain, kemajuan teknologi dan keterbukaan akses terhadap data astronomi global membuka peluang besar untuk membawa astronomi ke ruang kelas dengan pendekatan yang lebih ilmiah dan kontekstual. Salah satu cabang ilmu astronomi yang sangat potensial untuk tujuan ini adalah astrometri—ilmu yang mempelajari posisi dan gerak benda langit secara presisi. Astrometri berperan penting dalam berbagai aspek astronomi modern, seperti penentuan orbit asteroid, pelacakan komet, pemetaan galaksi, serta pendukung misi navigasi luar angkasa.
+        Yang menarik, kegiatan astrometri tidak harus dilakukan dengan teleskop observatorium yang mahal. Dengan memanfaatkan citra digital dari perangkat lunak simulasi seperti CLEA (Contemporary Laboratory Experiences in Astronomy. Siswa dapat melakukan pengukuran posisi asteroid, melakukan plotting gerak, dan mengestimasi lintasan orbit sederhana. Inilah peluang untuk menjadikan astrometri sebagai jembatan antara pembelajaran fisika dan astronomi yang bersifat aktif, berbasis proyek, dan mengasah literasi data serta keterampilan ilmiah siswa.
+Melalui pengembangan modul ini, astrometri asteroid diposisikan tidak hanya sebagai materi pengayaan, tetapi juga sebagai sarana untuk mengisi kekosongan astronomi dalam kurikulum, membangun pengalaman ilmiah siswa secara langsung, serta memperkenalkan astronomi sebagai ilmu yang relevan, modern, dan bermakna.
+      </span>
+      </p>
+      <button onclick="toggleText()" id="myBtn">Lihat Selengkapnya</button>
+    </section>
+
+    <section>
+      <h2>Tujuan Pembelajaran</h2>
+      <div class="content intro">
+      <ul>
+        <li>Menjelaskan konsep dasar astrometri dan aplikasinya dalam pengamatan asteroid.</li>
+        <li>Melatih peserta didik dalam keterampilan analisis data dan interpretasi hasil pengamatan astronomi.</li>
+        <li>Memahami proses ilmiah melalui pemanfaatan perangkat lunak CLEA.</li>
+        <li>Mengintegrasikan nilai-nilai P5P2RA melalui eksplorasi isu global dan keberlanjutan.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Manfaat</h2>
+      <div class="content intro">
+      <ul>
+        <li>Mendorong minat peserta didik terhadap astronomi dan sains.</li>
+        <li>Menjadi sarana pengayaan materi fisika melalui pendekatan kontekstual dan berbasis proyek.</li>
+        <li>Mengembangkan literasi sains dan kemampuan berpikir kritis peserta didik.</li>
+        <li>Menjadikan astronomi sebagai pintu masuk kolaboratif lintas mapel.</li>
+      </ul>
+    </section>
+    </div> 
+   <div class="nav-buttons">
+ <!-- Tombol Back -->
+<button class="btn-nav btn-back" onclick="location.href='index.html'">⬅ Back</button>
+
+<!-- Tombol Home -->
+<button class="btn-nav btn-home" onclick="location.href='index.html'">🏠 Home</button>
+
+<!-- Tombol Next -->
+<button class="btn-nav btn-next" onclick="location.href='dasarteori.html'">Next ➡</button>
+</div>
+
+     <script>
+    function toggleText() {
+      const dots = document.getElementById("dots");
+      const moreText = document.getElementById("more");
+      const btnText = document.getElementById("myBtn");
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Lihat Selengkapnya";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Sembunyikan";
+        moreText.style.display = "inline";
+      }
+    }
+  </script>
+</body>
+</html>
+

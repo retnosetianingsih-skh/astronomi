@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modul Astrometri Guru</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content{color:white;}
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .tab-menu button { margin-right: 5px; }
+    .video-container iframe { width: 100%; height: 315px; }
+    .slideshow-container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      margin: 20px auto;
+    }
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slideshow-container img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content-box">
+      <h1>Modul Astrometri Asteroid - Akses Guru</h1>
+
+      <section>
+        <h2>Mari Kita Telusuri Jejak Asteroid!</h2>
+        <div class="tab-menu">
+          <button onclick="showTheory('diskusi')">Diskusi</button>
+          <button onclick="showTheory('kesimpulan')">Kesimpulan</button>
+        </div>
+
+        <div id="diskusi" class="tab-content active">
+          <h4>Diskusi</h4>
+          <p>Berdasarkan hasil identifikasi asteroid menggunakan metode blinking dan identifikasi koordinat asteroid yang telah dilakukan menggunakan CLEA Astrometry of Asteroid, dapat diketahui 7 posisi asteroid 1992JB yang diambil pada waktu yang berbeda-beda. Perubahan posisi asteroid dapat diilustrasikan seperti Gambar 2. 
+          </p>
+          <div style="text-align: center;">
+          <img src="ilustrasigerak.jpg" alt="Ilustrasi Gerak Asteroid secara Matematis
+"width="400">
+</div>
+<p>
+<caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+    <div style="text-align: center;">
+  Gambar 2. Ilustrasi Gerak Asteroid secara Matematis
+  </div>
+  </caption>
+  </p>
+  <p>
+    Berdasarkan ilustrasi yang disajikan pada Gambar 2, perubahan posisi (Δ𝛉) dapat ditentukan dengan menggunakan teorema Phytagoras sebagai berikut:
+  </p>
+  <p>
+    <div style="text-align: center;">
+    <img src="pers1.jpg" alt="Persamaan 1"width="150">
+    </div>
+  </p>
+  <p>
+    Dengan menggunakan Persamaan (1) diperoleh perubahan posisi (Δ𝛉) dalam satuan detik busur sebesar 112,43”. Perubahan posisi dari citra pertama (92JB05) ke citra terakhir (92JB14) terjadi dalam selang waktu 2 jam 23 menit (Δt = 8580 s). Dengan membagi perubahan posisi (Δ𝛉) dan perubahan waktu (Δt), dapat diketahui kecepatan sudut (kecepatan angular) asteroid, sesuai dengan definisi kecepatan sudut yakni perubahan posisi tiap satuan waktu. Secara matematis, definisi ini dapat ditulis:
+  </p>
+  <p>
+    <div style="text-align: center;">
+  <img src="pers2.jpg" alt="Persamaan 2"width="80">
+  </div>
+  </p>
+  <p>
+    Berdasarkan persamaan (2) diperoleh nilai kecepatan sudut asteroid 1992JB sebesar 0.013 “/s. Hasil yang diperoleh menunjukkan kecepatan sudut dalam satuan detik busur per detik. Diperlukan data jarak asteroid dengan bumi untuk mengetahui berapa kecepatan asteroid dalam satuan yang lebih umum, km/s.
+  </p>
+  <p>
+    Jarak asteroid dengan bumi ditentukan menggunakan metode parallax.  Asteroid 1992JB diamati dari dua posisi berbeda di permukaan bumi. Aplikasi Astrometry of Asteroid ini menyediakan data citra pengamatan asteroid 1992JB dari dua posisi berbeda. Citra ASTEAST diamati dari Foggy Bottom Observatory, Colgate University, Hamilton, NY oleh Dr. Thomas Balonek. Sedangkan citra ASTWEST diambil dari National Undergraduate Research Observatory Flagstaff, Arizona oleh Dr. Laurence Marschall.  Jarak antara kedua observatorium ini adalah 3172 km. Citra ASTEAST dan ASTWEST dapat dilihat pada Gambar 3.
+  </p>
+  <p>
+    <div style="text-align: center;">
+    <img src="citra1.jpg" alt="Citra"width="400">
+    </div>
+  </p>
+  <p>
+    <caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+   <div style="text-align: center;">
+      Gambar 3. Citra ASTEAST (Kiri) dan Citra ASTWEST (Kanan)
+      </div>
+  </caption>
+  </p>
+  <p>
+    Citra ASTEAST dan ASTWEST menunjukkan dimensi yang berbeda. Hal ini berkaitan dengan perbedaan sensitivitas teleskop yang digunakan. ASTEAST diamati dengan menggunakan teleskop 0.4 m sementara ASTWEST diamati menggunakan teleskop 0.8 m. Selain itu, kedua teleskop yang digunakan memiliki chip CCD yang dimensinya berbeda. Meskipun demikian, bintang referensi yang sama dapat terlihat pada kedua citra. 
+  </p>
+  <p>
+    Asteroid 1992JB pada citra ASTEAST dan ASTWEST juga menunjukkan koordinat yang berbeda. Pada Gambar 2, terlihat asteroid pada citra ASTEST nampak lebih dekat relatif terhadap bintang referensi jika dibanding citra ASTWEST. Perbedaan ini yang disebut dengan efek paralaks. Ilustrasi efek paralaks disajikan pada Gambar 4 dan informasi koordinat asteroid pada kedua citra dapat dilihat pada Tabel 4.
+  </p>
+  <p>
+    <div style="text-align: center;">
+   <img src="paralaks.jpg" alt="Paralaks"width="250">
+   </div>
+  </p>
+  <p>
+    <caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+    <div style="text-align: center;">
+      Gambar 4. Pengamatan 1992JB Menggunakan Paralaks
+      </div>
+  </caption> 
+  </p>
+ <p>
+   <table style="width: 100%; border-collapse: collapse; color: rgb(0, 0, 0); text-align: center;">
+ <caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+    Tabel 3. Koordinat Asteroid 1992JB pada Citra ASTEAST dan ASTWEST
+  </caption>
+    <thead>
+    <tr>
+      <th style="border: 1px solid #000000; padding: 8px;">Nama File</th>
+      <th style="border: 1px solid #000000; padding: 8px;">RA (h m s)</th>
+      <th style="border: 1px solid #000000; padding: 8px;">DEC (&deg; ' ")</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">ASTEAST</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">15 30 37.72</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">11 15 36.1</td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">ASTWEST</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">15 30 38.69</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">11 15 41.2</td>
+    </tr>
+</tbody>
+</table>
+</p>
+<p>
+  Berdasarkan Gambar 4, perbedaan posisi sudut dari dua posisi pengamatan (Δ𝛉) merupakan efek paralaks. Besar paralaks (Δ𝛉) pada kedua citra ini adalah 15.16”. Dengan menggunakan pendekatan trigonometri, diperoleh:
+</p>
+<p>
+  <div style="text-align: center;">
+  <img src="pers3.jpg" alt="Persamaan 4"width="100">
+  </div>
+</p>
+<p>
+  Dimana B merupakan jarak antara kedua observatorium dan D adalah jarak asteroid ke bumi. Karena perbedaan posisi sudut kecil, maka tan (Δ𝛉) sama dengan Δ𝛉. Dengan demikian:
+</p>
+<p>
+  <div style="text-align: center;">
+  <img src="pers4.jpg" alt="Persamaan 4"width="80">
+  </div>
+</p>
+<p>
+  Karena Δ𝛉 sebelumnya dinyatakan dalam detik busur, perlu dilakukan konversi, menjadi:
+</p>
+<p>
+  <div style="text-align: center;">
+  <img src="pers5.jpg" alt="Persamaan 5"width="150">
+  </div>
+</p>
+<p>
+  Berdasarkan Persamaan (6) diperoleh jarak asteroid 1992JB dengan bumi sejauh 4.316x10<sup>7</sup> m atau 2.88x10<sup>-4</sup> AU.
+</p>
+<p>
+  Berdasarkan orbitnya, asteroid diklasifikasikan menjadi Belt Asteroids, Trojan Asteroids, dan Near-Earth Asteroids. Harris dan D’Abramo (2015) menyebutkan bahwa Near-Earth Asteroids (NEA) merupakan bagian dari Near-Earth Objects (NEO) yang memiliki orbit <1,3 AU. NEA sendiri terbagi menjadi beberapa kelompok, yaitu Amor, Apollo, dan Aten. Shoemaker, dkk (1979) menjelaskan Aten memiliki sumbu semimayor (a) < 1 AU, dengan aphelion > 0.983 AU. Asteroid Apollo memiliki sumbu semimayor (a) > 1 AU dengan perihelion < 1.017 AU. Sementara asteroid Amor memiliki perihelion pada rentang 1.017 AU < P < 1.3 AU.  
+  Berdasarkan klasifikasi ini, asteroid Apollo memotong orbit bumi yang jaraknya ~ 1 AU. Asteroid 1992 JB berjarak 2.88x10<sup>-4</sup> AU, artinya berada pada orbit bumi. Dengan demikian, Asteroid 1992 JB dapat dikategorikan sebagai asteroid Apollo. 
+  Hal ini sesuai dengan data dari spacereference.org yang menyebutkan bahwa asteroid 1992 JB (9058) termasuk Apollo yang merupakan asteroid kecil yang orbitnya memotong orbit bumi. 
+  Dikarenakan jaraknya yang sangat dekat dengan bumi, NASA telah mensimulasikan orbit 1992 JB. Simulasi menunjukkan hasil bahwa tidak ada kemungkinan tabrakan dalam waktu dekat, sehingga 1992 JB dianggap tidak berpotensi membahayakan. Simulasi orbit 1992 JB dapat dilihat pada Gambar 5.
+</p>
+<p>
+  <div style="text-align: center;">
+  <img src="simulasiorbit.jpg" alt="Simulasi Orbit"width="450">
+  </div>
+</p>
+<p>
+  <div style="text-align: center; bold;">
+  Gambar 5. Simulasi Orbit Asteroid 1992 JB
+  </div>
+</p>
+<p>
+  <div style="text-align: center;">
+  (Sumber : <a href="https://www.spacereference.org/solar-system#ob=9058-1992-jb" target="_blank">https://www.spacereference.org/asteroid/9058-1992-jb</a>)
+</div>
+</p>
+<p>
+  Berdasarkan simulasi tersebut, dapat diprediksi pula waktu dimana asteroid 1992 JB memotong orbit bumi. Data prediksi disajikan pada Tabel 5.
+</p>
+<p>
+   <table style="width: 100%; border-collapse: collapse; color: rgb(0, 0, 0); text-align: center;">
+ <caption style="caption-side: top; font-weight: bold; margin-bottom: 10px;">
+    Tabel 5. Prediksi Waktu Perpotongan Orbit 1992 JB dengan Bumi
+  </caption>
+    <thead>
+    <tr>
+      <th style="border: 1px solid #000000; padding: 8px;">Tanggal</th>
+      <th style="border: 1px solid #000000; padding: 8px;">Jarak dari Bumi (km)</th>
+      <th style="border: 1px solid #000000; padding: 8px;">Kecepatan (km/s)</th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">21 April 2025</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">15.291.069</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">11,669</td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">18 April 2093</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">12.994.751</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">10,275</td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">24 April 2126</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">16.666.728</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">11,995</td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">14 April 2161</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">22.135.943</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">9,161</td>
+    </tr>
+
+    <tr>
+      <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">20 April 2194</td>
+     <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">12.394.421</td>
+    <td style="border: 1px solid rgb(0, 0, 0); padding: 8px;">10,432</td>
+    </tr>
+</tbody>
+</table>
+</p>
+        </div>
+
+        <div id="kesimpulan" class="tab-content">
+          <h4>Kesimpulan</h4>
+          <p>Berdasarkan analisis citra asteroid 1992 JB yang telah dilakukan menggunakan aplikasi CLEA Asrometry of Asteroids, dapat diketahui jarak asteroid 1992 JB dari bumi sejauh 4.316107 m atau 2.8810-4 AU. Karena orbitnya berada pada orbit Bumi, asteroid 1992 JB dikategorikan sebagai Near-Earth Asteroid, yaitu pada kelompok asteroid Apollo. Meskipun jaraknya sangat dekat dengan Bumi, asteroid 1992 JB diprediksi sebagai asteroid yang tidak berbahaya. Prediksi ini didasarkan pada simulasi orbit 1992 JB yang memperlihatkan tidak adanya potensi tabrakan dalam waktu dekat.
+          </p>
+      
+      <div class="nav-buttons">
+        <button class="btn-nav btn-back" onclick="location.href='tutorial.html'">⬅ Back</button>
+        <button class="btn-nav btn-home" onclick="location.href='index.html'">🏠 Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showTheory(id) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function runSlideshow(containerId) {
+      const container = document.getElementById(containerId);
+      const slides = container.querySelectorAll('img');
+      let current = 0;
+
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000);
+    }
+
+    runSlideshow('slideshow1');
+    runSlideshow('slideshow2');
+  </script>
+</body>
+</html>
